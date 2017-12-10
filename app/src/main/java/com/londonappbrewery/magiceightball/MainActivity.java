@@ -16,29 +16,30 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-
-        Button askButton ;
-        askButton =  (Button) findViewById(R.id.askButton) ;
-        final ImageView ballDisplay = (ImageView)  findViewById(R.id.image_eightBall) ;
-
-        final  int [] ballArray = {
-
+        String studentstext;
+        studentstext = "This is the 2nd attempt after watching your video...." ;
+        final ImageView ballDisplay =   findViewById(R.id.image_eightBall) ;
+        final  int [] ballArray = new int[]{
                 R.drawable.ball1,
                 R.drawable.ball2,
                 R.drawable.ball3,
                 R.drawable.ball4,
                 R.drawable.ball5,
-
         };
 
-        askButton.setOnClickListener(new View.OnClickListener() {
+        Button myButton ;
+        myButton =   findViewById(R.id.askButton) ;
+        myButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
 
-                Random randomnumgen = new Random () ;
-                int number = randomnumgen.nextInt(5) ;
-              //  Log.d("Debugging ijn progress...", "Keep Asking:" + number  ) ;
-               ballDisplay.setImageResource(ballArray [number]);
+                Random randomNumberGenerator = new Random () ;
+                int number = randomNumberGenerator.nextInt(5) ;
+                ballDisplay.setImageResource(ballArray [number]);
+
+
+              //  Log.d(studentstext) ;
+
 
 
 
